@@ -3,14 +3,26 @@ import java.util.List;
 import java.util.Random;
 
 public class Main {
-    public static void main(String[] args) {
-        List<Integer> zahlen= new ArrayList<Integer>();
-        Random rand=new Random();
 
-        for(int i=1;i<=10;i++)
+    public static ArrayList<Integer> getRandomList(int size)
+    {
+        Random rand=new Random();
+        ArrayList<Integer> zahlen =new ArrayList<>();
+        for(int i=0;i<size; i++)
         {
-            zahlen.add(rand.nextInt(100)+1);
+            zahlen.add(rand.nextInt(500)+1);
         }
+        return zahlen;
+    }
+
+
+    public static void main(String[] args) {
+
+
+        ArrayList<Integer> zahlen = getRandomList(100);
+
+
+
         int x=0;
         int y=0;
 
@@ -45,5 +57,8 @@ public class Main {
             System.out.println(zahlen.get(e));
         }
         System.out.println("Die benötigte Zeit war: "+lapTime);
+
+
+
     }
 }
