@@ -200,6 +200,8 @@ GameObject:
   - component: {fileID: 669446618}
   - component: {fileID: 669446617}
   - component: {fileID: 669446616}
+  - component: {fileID: 669446619}
+  - component: {fileID: 669446620}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -207,21 +209,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &669446616
-CircleCollider2D:
+--- !u!54 &669446616
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 669446615}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.66
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!212 &669446617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -275,12 +277,36 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 669446615}
   m_LocalRotation: {x: 0.017357895, y: 0.066455334, z: 0.047400184, w: 0.99651176}
-  m_LocalPosition: {x: -6.8768396, y: -0.6058689, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 1.621, y: 7.7090006, z: 5.556}
+--- !u!135 &669446619
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669446615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.66
+  m_Center: {x: 0, y: 0, z: -0.0000019073486}
+--- !u!114 &669446620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669446615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09e48155b17a486d9d4a908c85030b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ball: {fileID: 669446616}
 --- !u!1 &2014283333
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +326,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!58 &2014283334
 CircleCollider2D:
